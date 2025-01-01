@@ -1,7 +1,7 @@
 File add to VectorStore Status:  completed \
 File Count in VectorStore:  FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1) \
 Thread Details: \
- ToolResourcesFileSearch(vector_store_ids=['vs_cb4feYWkkVxLPySLjqzhUJHp'])
+ ToolResourcesFileSearch(vector_store_ids=['vs_id'])
 
 Assistant Reply:
 
