@@ -1,0 +1,1 @@
+The current temperature in San Francisco, CA is 57°F. The probability of rain today is 6%, indicating a low chance of rain.
