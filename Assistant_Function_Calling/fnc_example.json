@@ -1,0 +1,89 @@
+{
+  "name": "get_mails",
+  "description": "Constructs an Outlook search query string based on provided parameters for mail filtering.",
+  "strict": false,
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "search_query": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "field": {
+              "type": "string",
+              "enum": [
+                "from",
+                "to",
+                "cc",
+                "bcc",
+                "subject",
+                "hasattachment",
+                "attachments",
+                "category",
+                "messagesize",
+                "followupflag",
+                "received",
+                "read"
+              ],
+              "description": "The field to filter by, such as 'from', 'subject', 'received', etc."
+            },
+            "operator": {
+              "type": "string",
+              "enum": [
+                "equals",
+                "greater_than",
+                "less_than",
+                "is",
+                "is_not"
+              ],
+              "description": "The operator to apply for the search term. For example, 'contains' for partial match or 'equals' for exact match."
+            },
+            "value": {
+              "type": "string",
+              "description": "The value to match against. For example, an email address, subject text, or date range and yes no to the attachments or other values instead of true and false"
+            }
+          },
+          "required": [
+            "field",
+            "operator",
+            "value"
+          ]
+        },
+        "description": "A list of search terms to include in the query. Combine multiple terms using logical operators."
+      },
+      "logical_operator": {
+        "type": "string",
+        "enum": [
+          "AND",
+          "OR",
+          "NOT"
+        ],
+        "description": "Logical operator to combine search terms. Default is 'AND'."
+      },
+      "sort_by": {
+        "type": "string",
+        "enum": [
+          "date",
+          "size",
+          "subject",
+          "sender"
+        ],
+        "description": "Field to sort the search results by. For example, 'date' or 'size'."
+      },
+      "sort_order": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "description": "Order to sort the search results. 'asc' for ascending, 'desc' for descending."
+      },
+      "limit": {
+        "type": "number",
+        "description": "Maximum number of search results to return."
+      }
+    },
+    "required": []
+  }
+}
